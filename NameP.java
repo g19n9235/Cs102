@@ -10,6 +10,7 @@
  */
 
 import java.util.Arrays;
+import javax.swing.JTextField;
 
 public class NameP extends javax.swing.JDialog {
 
@@ -20,11 +21,10 @@ public class NameP extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
-    NameP() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public NameP() {
+        
+        initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,8 +43,15 @@ public class NameP extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Crazy 8 Game");
+        setMaximumSize(new java.awt.Dimension(1200, 780));
+        setMinimumSize(new java.awt.Dimension(1200, 780));
+        setPreferredSize(new java.awt.Dimension(1400, 780));
+        setType(java.awt.Window.Type.POPUP);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1400, 780));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1400, 780));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1700, 1200));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), null));
@@ -65,6 +72,7 @@ public class NameP extends javax.swing.JDialog {
         jLabel1.setText("Enter your name:");
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 153)));
 
+        name.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         name.setToolTipText("name");
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +80,7 @@ public class NameP extends javax.swing.JDialog {
             }
         });
 
+        OKButton.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         OKButton.setText("OK");
         OKButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +88,7 @@ public class NameP extends javax.swing.JDialog {
             }
         });
 
+        CancelButton.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         CancelButton.setText("CANCEL");
         CancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,36 +102,36 @@ public class NameP extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(309, 309, 309)
+                .addGap(469, 469, 469)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(OKButton)
-                        .addGap(122, 122, 122)
-                        .addComponent(CancelButton))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(306, Short.MAX_VALUE))
+                        .addGap(193, 193, 193)
+                        .addComponent(CancelButton)))
+                .addContainerGap(1114, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(116, 116, 116)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(66, 66, 66)
                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
+                .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OKButton)
-                    .addComponent(CancelButton))
-                .addGap(0, 194, Short.MAX_VALUE))
+                    .addComponent(CancelButton)
+                    .addComponent(OKButton))
+                .addGap(0, 728, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,25 +143,41 @@ public class NameP extends javax.swing.JDialog {
 
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
         
-        for(char n : name.toCharArray())
-        {
-            if(name.isEmpty() || null == name)
-            {
-                
-            } 
-            else
-            {
-                
-            }
-        }
+        name();
+        
     }//GEN-LAST:event_OKButtonActionPerformed
-
+    
+    public void cancel()
+    {
+       Cancel c = new Cancel();
+       Cancel.real();
+       this.dispose();
+    }
+    
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
-        // TODO add your handling code here:
+       cancel();  
     }//GEN-LAST:event_CancelButtonActionPerformed
-
+   
+    
+    
+    public void name()
+    {
+       if(name.getText().isEmpty())
+       {
+           Word b = new Word();
+           Word.word();
+           this.dispose();
+       }
+       else
+       {
+            Ground m = new Ground();
+            Ground.ground();
+            this.dispose();
+       }
+    }
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-        // TODO add your handling code here:
+       
+
     }//GEN-LAST:event_nameActionPerformed
 
     /**
@@ -204,4 +230,8 @@ public class NameP extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
+
+    private JTextField getText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -1,19 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Sphume Ntshangase
- */
-public class Names {
-   
-
-    static void Caller (){
+calls it sub-class NameP, where a person must enter their name
+*/
+public  class Names {
+  
+    static void Caller ()
+    {
         NameP  wrd = new NameP();
         wrd.setVisible(true);
+       
     }
     
     
